@@ -24,11 +24,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       delay={cardDelays[index] ?? 0}
       className={`${sizeClasses[project.size]} group relative`}
     >
-      <div
-        className={`relative flex h-full overflow-hidden rounded-2xl border border-border bg-surface transition-[border-color,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-border-hover ${
+      <a
+        href={project.githubUrl || "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`relative flex h-full overflow-hidden rounded-2xl border border-border bg-surface transition-[border-color,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-border-hover cursor-pointer ${
           isWide
-            ? "flex-col gap-5 p-5 sm:flex-row sm:items-stretch sm:gap-8 sm:p-6"
-            : "flex-col gap-5 p-5 sm:p-6"
+            ? "flex-col gap-5 p-5 sm:flex-row sm:items-stretch sm:gap-8 sm:p-6" //[cite: 2]
+            : "flex-col gap-5 p-5 sm:p-6" //[cite: 2]
         }`}
       >
         <div
@@ -104,7 +107,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </ul>
           </div>
         </div>
-      </div>
+      </a>
     </FadeIn>
   );
 }

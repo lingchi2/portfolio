@@ -51,6 +51,7 @@ export type Project = {
    *          `{ src: "/projects/gym/demo.mp4", type: "video" }`
    */
   media?: ProjectMedia[];
+  githubUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -63,7 +64,7 @@ export const projects: Project[] = [
     size: "large",
     media: [
       // Drop files into public/projects/gym/ then uncomment:
-      // { src: "/projects/gym/1.webp", type: "image" },
+      { src: "/projects/gym/gym.jpg", type: "image" },
       // { src: "/projects/gym/2.webp", type: "image" },
       // { src: "/projects/gym/demo.mp4", type: "video" },
     ],
@@ -80,6 +81,7 @@ export const projects: Project[] = [
       { src: "/projects/benchmark/2_depth_vs_n.png", type: "image" },
       { src: "/projects/benchmark/3_ratio_vs_n.png", type: "image" },
     ],
+    githubUrl: "https://github.com/lingchi2/DAA_Assignment_1"
   },
   {
     id: "auction-db",
